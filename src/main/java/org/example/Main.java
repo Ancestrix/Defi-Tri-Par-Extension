@@ -4,10 +4,9 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.Scanner;
 import org.apache.commons.io.FilenameUtils;
-import static java.lang.Thread.sleep;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         Scanner chemin = new Scanner(System.in);
         System.out.println("Veuillez entrer le chemin absolu du répertoire à trier :");
@@ -22,7 +21,6 @@ public class Main {
 
         File dossier = new File(path);
         File[] files = dossier.listFiles(logFilefilter);
-        String[] filesName = dossier.list();
         int nbFile = dossier.listFiles(logFilefilter).length;
         for (int i=0;i<nbFile;i++){
             String fe = FilenameUtils.getExtension(files[i].getName());
